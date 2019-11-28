@@ -24,6 +24,7 @@ Git秘钥生成以及Gitlab配置：https://www.cnblogs.com/xiuxingzhe/p/9303278
 
 gitlab使用深度总结：https://blog.csdn.net/nnmmbb/article/details/46713095
 
+!!!!!!!!!!!!!!!git安装其实看这个最终解决方案即可
 最后解决方式：
 https://blog.csdn.net/mooncrystal123/article/details/86478111
 真的强，是真的有用
