@@ -1,6 +1,6 @@
 # CatsLover
 
-
+---
 Gitlab基本操作
 
 Gitlab使用教程：https://blog.csdn.net/Adelly/article/details/79099772
@@ -31,7 +31,7 @@ https://blog.csdn.net/mooncrystal123/article/details/86478111
 这里的URl在下图找
 Directory写C:\Users\12557\PycharmProjects，是我的pycharm项目文件的存放地址
 
-
+---
 
 前期准备工作：
 大家先去学习相关的技术点，整理成文档上传方便共同学习。
