@@ -44,6 +44,11 @@ Directory写C:\Users\12557\PycharmProjects，是我的pycharm项目文件的存�
 3. MyBatis的使用，包括与他相关的xml配置
 
 4. mysql 数据库的连接。
+ide连接mysql数据库：
+https://blog.csdn.net/wk992337444/article/details/79279276
+如下载相关包时遇到时区问题：
+https://blog.csdn.net/weixin_42941486/article/details/100660560
+
 
 5. MVC 三者的关系。
 
