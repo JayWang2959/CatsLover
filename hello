@@ -1,3 +1,0 @@
-public static void main(args = String[]){
-  system.out.printline("hello there");
-}
