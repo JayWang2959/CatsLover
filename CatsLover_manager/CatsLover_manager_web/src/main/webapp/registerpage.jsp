@@ -62,14 +62,15 @@
 <h1>给最好的你 分享你最爱的猫猫</h1>
 <div class="app-cam">
     <div class="cam"><img src="images/cat_sign.png" class="img-responsive" alt="" /></div>
-    <form action="/submittry" method="post">
-        <input name="temp" type="text" placeholder="Id" class="text"  >
-        <input name="usern" type="text" placeholder="Username">
-        <input name="passw" type="password" placeholder="Password">
+    <form action="/register" method="post">
+        <input name="register_id" type="text" placeholder="Id" class="text"  >
+        <input name="register_username" type="text" placeholder="Username">
+        <input name="register_password" type="password" placeholder="Password">
         <br>
         <font color="white"> ${error}</font>
         <br>
 
+        <%-- todo 康康myfunction的作用       --%>
         <div class="submit"><input type="submit" onclick="myFunction()" value="Submit" ></div>
         <div class="clear"></div>
         <div class="buttons">
