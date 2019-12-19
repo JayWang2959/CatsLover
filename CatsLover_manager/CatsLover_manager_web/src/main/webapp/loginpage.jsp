@@ -75,7 +75,7 @@
             </div>
             <div class="new">
 <%--                <p><a href="#">Forgot Password ?</a></p>--%>
-                <p class="sign">New here ?<a href="submit.jsp"> Sign Up</a></p>
+                <p class="sign">New here ?<a href="submitpage.jsp"> Sign Up</a></p>
                 <div class="clear"></div>
             </div>
         </form>
