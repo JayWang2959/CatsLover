@@ -29,4 +29,37 @@ public class TestUserServiceImpl implements TestUserService {
         }
         return null;
     }
+
+    @Override
+    public Testuser getPasswordById(Integer id){
+        TestuserExample testuserExample = new TestuserExample();
+        TestuserExample.Criteria criteria = testuserExample.createCriteria();
+        criteria.andIdEqualTo(id);
+
+        List<Testuser> userList = testuserMapper.selectByExample(testuserExample);
+
+        if(userList!=null){
+            return userList.get(0);
+        }
+        return null;
+    }
+    @Override
+    public void submitInfo(Integer id, String username, String password){
+        Testuser testuser = new Testuser();
+        testuser.setId(id);
+        testuser.setUsername(username);
+        testuser.setPassword(password);
+        testuserMapper.insert(testuser);
+    };
+
+//    @Override
+//    public Testuser submitInfo(Integer id, String username, String password){
+//
+//    };
+
+
+
+
+
+
 }

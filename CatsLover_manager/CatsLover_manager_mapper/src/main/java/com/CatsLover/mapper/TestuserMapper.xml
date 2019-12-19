@@ -4,6 +4,7 @@
   <resultMap id="BaseResultMap" type="com.CatsLover.pojo.Testuser">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="userName" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -64,7 +65,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, userName
+    id, userName, password
   </sql>
   <select id="selectByExample" parameterType="com.CatsLover.pojo.TestuserExample" resultMap="BaseResultMap">
     select
@@ -81,7 +82,7 @@
     </if>
   </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
+    select
     <include refid="Base_Column_List" />
     from testuser
     where id = #{id,jdbcType=INTEGER}
@@ -97,8 +98,8 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.CatsLover.pojo.Testuser">
-    insert into testuser (id, userName)
-    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR})
+    insert into testuser (id, userName, password)
+    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.CatsLover.pojo.Testuser">
     insert into testuser
@@ -109,6 +110,9 @@
       <if test="username != null">
         userName,
       </if>
+      <if test="password != null">
+        password,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -116,6 +120,9 @@
       </if>
       <if test="username != null">
         #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -134,6 +141,9 @@
       <if test="record.username != null">
         userName = #{record.username,jdbcType=VARCHAR},
       </if>
+      <if test="record.password != null">
+        userName = #{record.password,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -143,6 +153,7 @@
     update testuser
     set id = #{record.id,jdbcType=INTEGER},
       userName = #{record.username,jdbcType=VARCHAR}
+      password = #{record.password,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>

@@ -13,7 +13,7 @@ public interface TestuserMapper {
 
     int deleteByPrimaryKey(Integer id);
 
-    int insert(Testuser record);
+    void insert(Testuser record);
 
     int insertSelective(Testuser record);
 
