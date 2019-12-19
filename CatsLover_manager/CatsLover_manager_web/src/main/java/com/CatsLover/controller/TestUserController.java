@@ -43,7 +43,7 @@ public class TestUserController {
         if(passw.equals(user.getPassword())){
             System.out.println("true");
             model.addAttribute("loginuser", "欢迎"+user.getUsername()+"!");
-            return "mainpage";
+            return "homepage";
         }
         else{
             System.out.println("false");
