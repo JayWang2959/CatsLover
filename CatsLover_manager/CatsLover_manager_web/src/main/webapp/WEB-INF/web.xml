@@ -10,9 +10,9 @@
     <!-- 指定首页列单 -->
     <welcome-file-list>
         <!-- 服务器为依照设定顺序找首页文件 -->
-        <welcome-file>index.html</welcome-file>
-        <welcome-file>index.htm</welcome-file>
-        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>homepage.html</welcome-file>
+        <welcome-file>homepage.htm</welcome-file>
+        <welcome-file>homepage.jsp</welcome-file>
 
     </welcome-file-list>
 
