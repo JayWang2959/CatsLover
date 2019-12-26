@@ -62,9 +62,9 @@
     <h1>给最好的你 分享你最爱的猫猫</h1>
     <div class="app-cam">
         <div class="cam"><img src="images/cat_sign.png" class="img-responsive" alt="" /></div>
-        <form action="/try" method="post">
-            <input name="temp" type="text" placeholder="Id" class="text"  >
-            <input name="passw" type="password" placeholder="Password">
+        <form action="/login" method="post">
+            <input name="login_id" type="text" placeholder="Id" class="text"  >
+            <input name="login_password" type="password" placeholder="Password">
             <br>
             <font color="white"> ${error}</font>
             <br>
@@ -75,7 +75,7 @@
             </div>
             <div class="new">
 <%--                <p><a href="#">Forgot Password ?</a></p>--%>
-                <p class="sign">New here ?<a href="submitpage.jsp"> Sign Up</a></p>
+                <p class="sign">New here ?<a href="registerpage.jsp"> Sign Up</a></p>
                 <div class="clear"></div>
             </div>
         </form>
