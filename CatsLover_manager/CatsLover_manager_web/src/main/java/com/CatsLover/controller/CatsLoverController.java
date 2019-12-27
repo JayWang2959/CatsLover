@@ -1,6 +1,5 @@
 package com.CatsLover.controller;
 
-
 import com.CatsLover.pojo.CatsloverUser;
 import com.CatsLover.service.CatsLoverLoginService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +9,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 @Controller()
@@ -18,13 +20,14 @@ public class CatsLoverController {
 
     @Autowired
     CatsLoverLoginService catsLoverLoginService;
+    private CatsloverUser user;
 
-    @RequestMapping(value="login")
-    public String logincheck(@RequestParam(required=false) String login_id, String login_password, Model model){
-        CatsloverUser user;
+    @RequestMapping(value="/login")
+    public String logincheck(HttpServletRequest request, HttpServletResponse response, String login_id, String login_password, Model model){
 
         try {
             user = catsLoverLoginService.getUserById(login_id);
+            System.out.println(user.getUserUsername() +"  "+user.getUserPassword());
         }catch (Exception e) {
 //            System.out.println(e.getClass().getName());
             if (e instanceof IndexOutOfBoundsException) {
@@ -39,16 +42,49 @@ public class CatsLoverController {
 
         if(login_password.equals(user.getUserPassword())){
             model.addAttribute("loginuser", "欢迎"+user.getUserUsername()+"!");
-            return "homepage";
+
+            HttpSession session = request.getSession();
+            session.setAttribute("login_id",login_id);
+            session.setAttribute("login_password",login_password);
+
+            Cookie userCookie = new Cookie("login_id",login_id);
+            userCookie.setMaxAge(500);
+            userCookie.setPath("/");
+            response.addCookie(userCookie);
+
+            Cookie[] cookies = request.getCookies();
+            System.out.println("外部的SessionId:"+session.getId());
+            for (Cookie cookie:cookies){
+                if(cookie.getName().equals("JSESSIONID")){
+                    System.out.println("Cookie里边的："+session.getId());
+                    cookie.setValue(session.getId());
+                    cookie.setPath("/");
+                    cookie.setMaxAge(500);
+                    response.addCookie(cookie);
+                }
+            }
+
+            return "homeAfterLogin";
         }
         else{
             model.addAttribute("error", "密码错误！");
             return "loginpage";
         }
-
     }
 
-    @RequestMapping(value="register")
+    @RequestMapping("/logout")
+    public String logout(HttpServletRequest request,HttpServletResponse response){
+        //删除cookie
+        Cookie userCookie = new Cookie("login_id","");
+        userCookie.setMaxAge(0);
+        userCookie.setPath("/");
+        response.addCookie(userCookie);
+        request.getSession().removeAttribute("login_id");
+        request.getSession().removeAttribute("login_password");
+        return "homepage";
+    }
+
+    @RequestMapping(value="/register")
     public String submitUser(@RequestParam(required=false) String register_id,String register_username, String register_password, Model model){
         try {
             catsLoverLoginService.submitInfo(register_id, register_username, register_password);
@@ -67,12 +103,46 @@ public class CatsLoverController {
         return "homepage";
     }
 
+    @RequestMapping("/autologin")
+    public String autoLogin(HttpServletRequest request,HttpServletResponse response, Model model){
+        System.out.println("进入了自动登录的Controller！");
+        Cookie[] cookies = request.getCookies();
+        if(cookies==null){
+            return "homepage";
+        }
+        HttpSession session = request.getSession(false);
+        String sessionId = session.getId();
 
+        for(Cookie cookie:cookies){
+            if (cookie.getName().equals("JSESSIONID")) {
+                if(!cookie.getValue().equals(sessionId)){
+                    return "homepage";
+                }
+            }
+        }
 
+        for (Cookie cookie2:cookies){
+            if(cookie2.getName().equals("login_id")&&cookie2.getValue()!=null){
+                String cookieUserId = cookie2.getValue();
+                try{
+                    user = catsLoverLoginService.getUserById(cookieUserId);
+                    String realPassword = user.getUserPassword();
+                    if (session.getAttribute("login_password").equals(realPassword)){
+                        model.addAttribute("loginuser", "欢迎"+user.getUserUsername()+"!");
+                        return "homepage";
+                    }else{
+                        return "homepage";
+                    }
 
+                }catch (NullPointerException e){
+                    return "homepage";
+                }
 
+            }
+        }
 
-
+        return "homepage";
+    }
 
 }
 

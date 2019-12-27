@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: wangj
-  Date: 2019/12/14
-  Time: 20:24
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" import="java.util.*" pageEncoding ="UTF-8" language="java" %>
 <html lang="en">
 
@@ -45,11 +38,33 @@
             });
         });
     </script>
+    <script src="https://kit.fontawesome.com/941d293b27.js" crossorigin="anonymous"></script>
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <![endif]-->
 </head>
 <body>
+
+<%-- 登录后的悬浮窗 --%>
+<div class="contact-info">
+    <div class="option">
+        <i class="fas fa-user"></i>
+        <div class="text">个人中心</div>
+    </div>
+
+    <div class="option">
+        <i class="fas fa-address-book"></i>
+        <div class="text">我的关注</div>
+    </div>
+
+    <div class="option">
+        <i class="fas fa-sign-out-alt"></i>
+        <div class="text">注销</div>
+    </div>
+
+</div>
+
+
 <!-- banner -->
 <div class="banner">
     <div class="header">
@@ -76,7 +91,7 @@
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav">
                                 <li>&nbsp;&nbsp;&nbsp;</li>
-                                <li><a class="active" href="index.html">主页</a></li>
+                                <li><a class="active" href="homepage.jsp">主页</a></li>
                                 <li><a href="about.html">关于</a></li>
                                 <!--									<li class=""><a href="#" class="dropdown-toggle hvr-bounce-to-bottom" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Codes<span class="caret"></span></a>-->
                                 <!--										<ul class="dropdown-menu">-->
@@ -87,7 +102,6 @@
                                 <li ><a href="gallery.html">图片</a></li>
                                 <li><a href="../../../Downloads/moban1900/contact.html">Contact</a></li>
                                 <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
-                                <li><a class="active" href="loginpage.jsp">登录</a>${loginuser}</li><!--param.-->
                             </ul>
                             <div class="clearfix"> </div>
                         </div>
