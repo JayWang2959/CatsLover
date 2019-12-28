@@ -1,13 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" import="java.util.*" pageEncoding ="UTF-8" language="java" %>
 <html lang="en">
 
-<%
-    String path = request.getContextPath();
-    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-//    todo 首页会多次重定向，套娃，需要将autologin中的返回首页与本页面做区分
-//    response.sendRedirect(basePath+"autologin");
-%>
-
 <head>
     <title>CatsLover</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -49,7 +42,7 @@
 <div class="contact-info">
     <div class="option">
         <i class="fas fa-user"></i>
-        <div class="text">个人中心</div>
+        <div class="text">${loginuser}</div>
     </div>
 
     <div class="option">
@@ -58,7 +51,7 @@
     </div>
 
     <div class="option">
-        <i class="fas fa-sign-out-alt"></i>
+        <i class="fas fa-sign-out-alt" href="homepage.jsp"></i>
         <div class="text">注销</div>
     </div>
 
@@ -91,7 +84,7 @@
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav">
                                 <li>&nbsp;&nbsp;&nbsp;</li>
-                                <li><a class="active" href="homepage.jsp">主页</a></li>
+                                <li><a class="active" href="homeAfterLogin.jsp">主页</a></li>
                                 <li><a href="about.html">关于</a></li>
                                 <!--									<li class=""><a href="#" class="dropdown-toggle hvr-bounce-to-bottom" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Codes<span class="caret"></span></a>-->
                                 <!--										<ul class="dropdown-menu">-->
