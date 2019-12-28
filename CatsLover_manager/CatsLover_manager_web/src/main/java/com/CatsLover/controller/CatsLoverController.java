@@ -1,5 +1,6 @@
 package com.CatsLover.controller;
 
+import com.CatsLover.CookieUtils.CookieUtils;
 import com.CatsLover.pojo.CatsloverUser;
 import com.CatsLover.service.CatsLoverLoginService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,8 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 
 
 @Controller()
@@ -23,47 +26,32 @@ public class CatsLoverController {
     private CatsloverUser user;
 
     @RequestMapping(value="/login")
-    public String logincheck(HttpServletRequest request, HttpServletResponse response, String login_id, String login_password, Model model){
-
+    public String logincheck(HttpServletRequest request, HttpServletResponse response, String login_id, String login_password, Model model) throws UnsupportedEncodingException {
+        System.out.println(catsLoverLoginService);
         try {
-            user = catsLoverLoginService.getUserById(login_id);
-            System.out.println(user.getUserUsername() +"  "+user.getUserPassword());
+            user = catsLoverLoginService.loginByAccount(login_id, login_password);
+
         }catch (Exception e) {
-//            System.out.println(e.getClass().getName());
+            System.out.println(e);
             if (e instanceof IndexOutOfBoundsException) {
                 model.addAttribute("error", "用户不存在！");
+                e.printStackTrace();
                 return "loginpage";
             }
             else{
                 model.addAttribute("error", "抱歉，出现未知错误，请再试一次");
+                e.printStackTrace();
                 return "loginpage";
             }
         }
 
-        if(login_password.equals(user.getUserPassword())){
-            model.addAttribute("loginuser", "欢迎"+user.getUserUsername()+"!");
+        if (user!=null){
+            CookieUtils.addCookie(response, "USERID", user.getUserId(), 24*60*60);
+            CookieUtils.addCookie(response, "USERPWD", user.getUserPassword(), 24*60*60);
 
-            HttpSession session = request.getSession();
-            session.setAttribute("login_id",login_id);
-            session.setAttribute("login_password",login_password);
-
-            Cookie userCookie = new Cookie("login_id",login_id);
-            userCookie.setMaxAge(500);
-            userCookie.setPath("/");
-            response.addCookie(userCookie);
-
-            Cookie[] cookies = request.getCookies();
-            System.out.println("外部的SessionId:"+session.getId());
-            for (Cookie cookie:cookies){
-                if(cookie.getName().equals("JSESSIONID")){
-                    System.out.println("Cookie里边的："+session.getId());
-                    cookie.setValue(session.getId());
-                    cookie.setPath("/");
-                    cookie.setMaxAge(500);
-                    response.addCookie(cookie);
-                }
-            }
-
+            HttpSession session=request.getSession();
+            session.setAttribute("USER", user);
+            model.addAttribute("loginuser", user.getUserUsername());
             return "homeAfterLogin";
         }
         else{
@@ -95,11 +83,12 @@ public class CatsLoverController {
                 return "registerpage";
             }
             else{
+                e.printStackTrace();
                 model.addAttribute("error", "抱歉，出现未知错误，请再试一次");
                 return "registerpage";
             }
         }
-            model.addAttribute("loginuser", "欢迎"+register_username+"!");
+        model.addAttribute("loginuser", register_username);
         return "homepage";
     }
 
@@ -128,7 +117,7 @@ public class CatsLoverController {
                     user = catsLoverLoginService.getUserById(cookieUserId);
                     String realPassword = user.getUserPassword();
                     if (session.getAttribute("login_password").equals(realPassword)){
-                        model.addAttribute("loginuser", "欢迎"+user.getUserUsername()+"!");
+                        model.addAttribute("loginuser", user.getUserUsername());
                         return "homepage";
                     }else{
                         return "homepage";
@@ -137,7 +126,6 @@ public class CatsLoverController {
                 }catch (NullPointerException e){
                     return "homepage";
                 }
-
             }
         }
 
