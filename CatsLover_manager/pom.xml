@@ -17,6 +17,7 @@
         <module>CatsLover_manager_pojo</module>
         <module>CatsLover_manager_service</module>
         <module>CatsLover_manager_web</module>
+        <module>CatsLover_manager_common</module>
     </modules>
 
     <dependencies>
