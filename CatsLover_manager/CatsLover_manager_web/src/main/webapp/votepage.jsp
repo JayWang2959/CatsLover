@@ -1,47 +1,80 @@
-<%@ page contentType="text/html;charset=UTF-8" pageEncoding ="UTF-8" language="java" %>
-<%@ page isELIgnored="false" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: 86152
+  Date: 2019/12/28
+  Time: 14:38
+  To change this template use File | Settings | File Templates.
+--%>
+<%@page contentType="text/html" pageEncoding="gb2312"%>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>CatsLovervote</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+    <title>参加比赛</title>
+    <style type="text/css">
+        h1,h2,h3,h4,h5,h6{ display:inline;}
+    </style>
 </head>
-<link href="css/votestyle.css" rel='stylesheet' type='text/css' />
+<body background="images/1.jpg">
 <style>
-    input:focus{
-        border-color: #66afe9;
-        outline: 0;
-        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
-        box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+    .red {
+        font-size: 60px;
+        color:#FF0000;
+        font-style:inherit;
+    }
+    .blue {
+        font-size: 60px;
+        color:#0000FF;
+        font-style:inherit;
+    }
+    .white{
+        font-size: 24px;
+        color:#FFFF00;
+        font-style:inherit;
     }
 </style>
-
-<body>
-
-
-
-<h1>缁欐渶濂界殑浣� 鍒嗕韩浣犳渶鐖辩殑鐚尗</h1>
-<div class="app-cam">
-    <div class="cam"><img src="images/cat_sign.png" class="img-responsive" alt="" /></div>
-    <form action="/try" method="post">
-        <input name="temp" type="text" placeholder="Id" class="text"  >
-        <input name="passw" type="password" placeholder="Password">
-        <br>
-        <font color="white"> ${error}</font>
-        <br>
-
-        <div class="submit"><input type="submit" onclick="myFunction()" value="Sign in" ></div>
-        <div class="clear"></div>
-        <div class="buttons">
-        </div>
-        <div class="new">
-            <%--                <p><a href="#">Forgot Password ?</a></p>--%>
-            <p class="sign">New here ?<a href="submitpage.jsp"> Sign Up</a></p>
-            <div class="clear"></div>
-        </div>
-    </form>
-</div>
-<!--start-copyright-->
-<!--http://localhost:8081/CatsLover_manager_web/src/main/java/com/CatsLover/controller/infotry/infopassw?temp=11&pass=22-->
-<!--//end-copyright-->
-
+<center>
+    <h1 class="blue">比赛</h1><h1 >报名</h1><h1 class="red">管理</h1>
+</center>
+<p></p>
+<form action="applyupload.jsp" method="post" enctype="multipart/form-data">
+    <div align="center">
+        <h1 class="white">请填写详细信息</h1>
+        <a  href = "homepage.jsp" >点击返回主界面</a >
+    </div>
+    <table width="52%" border="3" align="center">
+        <tr bgcolor="#FFFFCC">
+            <td align='center' width="43%" ><div align="center">猫咪昵称:</div></td>
+            <td width="57"><div align="left">
+                <input type="text" name="cat_name">
+<%--            name    --%>
+            </div></td>
+        </tr>
+        <tr bgcolor="#FFFFCC">
+            <td align='center' width="43%" ><div align="center">主人id:</div></td>
+            <td width="57"><div align="left">
+                <input type="text" name="user_id">
+<%--           sex     --%>
+            </div></td>
+        </tr>
+        <tr bgcolor="#FFFFCC">
+            <td align='center' width="43%" ><div align="center">参赛宣言:</div></td>
+            <td width="200"><div align="left">
+                <input type="text" name="apply">
+            </div></td>
+        </tr>
+        <tr bgcolor="#FFFFCC">
+            <td align='center' width="43%" ><div align="center">选择你要参赛的图片:</div></td>
+            <td width="200"><div align="left">
+                <input type="file" name="photo" value="" />
+            </div></td>
+        </tr>
+        <p></p>
+    </table>
+    <p align="center">
+        <input type="submit" value="提交" name="Submit"/>
+        <input type="Reset" value="重置" name="Reset"/>
+    <p>
+</form>
 </body>
 </html>

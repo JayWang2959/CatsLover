@@ -11,16 +11,26 @@ a:hover{color:#D40000;text-decoration:none}
 .itagBox{margin:10px auto 0px;clear:both;width:980px;overflow:hidden;}
 .itagBox ul{width:980px;}
 .itagBox ul li{position:relative;float:left;width:240px;background:#fff;height:190px; overflow:hidden;margin:0px 6px 6px 0px;}
-.itagBox ul .votetext
+.itagBox ul .votetext1
 {
     width:100%;
     overflow:hidden;
     height:150px;
-    background-image:url(../images/votebb.jpg);
+    background-image:url(../images/2.jpg);
     background-position:center center;
     background-repeat:repeat;
     border-bottom:1px dotted #ddd;
 }
+.itagBox ul .votetext2
+ {
+     width:100%;
+     overflow:hidden;
+     height:150px;
+     background-image:url(../images/3.jpg);
+     background-position:center center;
+     background-repeat:repeat;
+     border-bottom:1px dotted #ddd;
+ }
 .itagBox ul .votedo
 {
     width:100%;
@@ -52,7 +62,7 @@ a:hover{color:#D40000;text-decoration:none}
     text-align:center;
     font-size:16px;
     color:#fff;
-    cursor:pointer
+    cursor:pointemr
 }
 .itagBox ul .tag1{width:238px;}
 .tag_yellow{color:#fff601;}

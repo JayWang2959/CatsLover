@@ -1,2 +1,2 @@
-com\CatsLover\service\TestUserService.class
-com\CatsLover\service\impl\TestUserServiceImpl.class
+com\CatsLover\service\CatsLoverLoginService.class
+com\CatsLover\service\impl\CatsLoverLoginServiceImpl.class
