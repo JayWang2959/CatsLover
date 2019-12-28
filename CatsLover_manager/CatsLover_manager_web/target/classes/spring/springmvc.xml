@@ -11,7 +11,7 @@
         http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd"> <!-- bean definitions here -->
 
-    <context:component-scan base-package="com.CatsLover.controller"></context:component-scan>
+    <context:component-scan base-package="com.CatsLover"/>
 
     <mvc:annotation-driven/>
 
