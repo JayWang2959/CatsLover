@@ -60,17 +60,16 @@
 								<i class="ydc-icon ydc-icon-home fl"></i>首页
 						</span>
                         <ul>
-                            <li><a target="frame" href="userCenterInfo.jsp">个人资料</a></li>
-                            <li><a target="frame" href="        ">修改信息</a></li>
+                            <li><a target="frame" href="/initUserCenterInfo">个人资料</a></li>
+                            <li><a target="frame" href="        ">关注列表</a></li>
                         </ul></li>
 
                     <li class="ydc-menu-item">
 							<span class="ydc-menu-sub-title">
-								<i class="ydc-icon ydc-icon-record fl"></i>猫猫
+                                <i class="fas fa-cat"></i>猫猫
 							</span>
                         <ul>
-                            <li><a target="frame" href="mycats.jsp"
-                            class="active">我的猫猫</a></li>
+                            <li><a target="frame" href="mycats.jsp">我的猫猫</a></li>
                         </ul>
                     </li>
 

@@ -9,8 +9,8 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link type="text/css" rel="stylesheet" href="/fly_ticket_pre_book/index/css/core.css">
-    <link type="text/css" rel="stylesheet" href="/fly_ticket_pre_book/index/css/home.css">
+    <link type="text/css" rel="stylesheet" href="css/core.css">
+    <link type="text/css" rel="stylesheet" href="css/home.css">
 </head>
 <body>
 
@@ -29,26 +29,40 @@
                     <div class="ydc-panes">
                         <div class="ydc-pane ydc-pane-clear" style="display: block;">
                             <div class="ydc-reg-form-group clearfix">
-                                <label>帐号名称</label>
+                                <label>帐号ID</label>
                                 <div class="ydc-reg-form-input">
-                                    <label>${userId}</label>
+                                    <label>${USERID}</label>
                                 </div>
                             </div>
 
                             <div class="ydc-reg-form-group clearfix">
-                                <label>帐号头像</label>
+                                <label>昵称</label>
                                 <div class="ydc-reg-form-input">
-                                    <label></label>
-                                    <div class="ydc-reg-form-text ydc-reg-form-user-logo">
-                                        <img src="<%=img_url.getImg() %>" alt="">
-                                    </div>
+                                    <label>${USERNAME}</label>
                                 </div>
                             </div>
+
+                            <div class="ydc-reg-form-group clearfix">
+                                <label>个性签名</label>
+                                <div class="ydc-reg-form-input">
+                                    <label>${USERSIGNATURE}</label>
+                                </div>
+                            </div>
+
+<%--                            <div class="ydc-reg-form-group clearfix">--%>
+<%--                                <label>帐号头像</label>--%>
+<%--                                <div class="ydc-reg-form-input">--%>
+<%--                                    <label></label>--%>
+<%--                                    <div class="ydc-reg-form-text ydc-reg-form-user-logo">--%>
+<%--&lt;%&ndash;                                        <img src="<%=img_url.getImg() %>" alt="">&ndash;%&gt;--%>
+<%--                                    </div>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
 
                             <div class="ydc-reg-form-group clearfix"
                                  style="margin-top: 40px;">
                                 <div class="ydc-reg-form-button" style="margin-left: 255px;">
-                                    <a class="btn fl" href="/fly_ticket_pre_book/index/edit_info.jsp">修改</a>
+                                    <a class="btn fl" href="">修改</a>
                                 </div>
                             </div>
                         </div>

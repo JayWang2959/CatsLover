@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
+
 
 
 @Controller()
@@ -50,7 +50,7 @@ public class CatsLoverLoginController {
             CookieUtils.addCookie(response, "USERPWD", user.getUserPassword(), 24*60*60);
 
             HttpSession session=request.getSession();
-            session.setAttribute("USER", user);
+            session.setAttribute("USERID", user.getUserId());
             model.addAttribute("userName", user.getUserUsername());
             return "homeAfterLogin";
         }
@@ -69,7 +69,7 @@ public class CatsLoverLoginController {
     }
 
     @RequestMapping(value="/register")
-    public String submitUser(@RequestParam(required=false) String register_id,String register_username, String register_password, Model model){
+    public String submitUser(HttpServletRequest request, String register_id,String register_username, String register_password, Model model){
         try {
             catsLoverLoginService.submitInfo(register_id, register_username, register_password);
         }catch (Exception e) {
@@ -84,8 +84,12 @@ public class CatsLoverLoginController {
                 return "registerpage";
             }
         }
+//        这里找不到session有bug
+//        HttpSession session=request.getSession();
+//        session.setAttribute("USERID", user.getUserId());
         model.addAttribute("userName", register_username);
-        return "homepage";
+//        跳转到登录页面再登一次
+        return "loginpage";
     }
 
     @RequestMapping("/autologin")

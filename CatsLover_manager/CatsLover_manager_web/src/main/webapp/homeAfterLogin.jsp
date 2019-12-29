@@ -44,7 +44,7 @@
         <a href="/userCenter">
             <i class="fas fa-user"></i>
             <div class="text">
-                ${userName}
+                <%out.println(session.getAttribute("USERID"));%>
             </div>
         </a>
     </div>
