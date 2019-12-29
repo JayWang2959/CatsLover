@@ -41,8 +41,12 @@
 <%-- 登录后的悬浮窗 --%>
 <div class="contact-info">
     <div class="option">
-        <i class="fas fa-user"></i>
-        <div class="text">${loginuser}</div>
+        <a href="/userCenter">
+            <i class="fas fa-user"></i>
+            <div class="text">
+                ${userName}
+            </div>
+        </a>
     </div>
 
     <div class="option">
@@ -51,10 +55,11 @@
     </div>
 
     <div class="option">
-        <i class="fas fa-sign-out-alt" href="homepage.jsp"></i>
-        <div class="text">注销</div>
+        <a href="/logout">
+            <i class="fas fa-sign-out-alt"></i>
+            <div class="text">注销</div>
+        </a>
     </div>
-
 </div>
 
 

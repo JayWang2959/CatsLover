@@ -19,7 +19,7 @@ import java.net.URLEncoder;
 
 
 @Controller()
-public class CatsLoverController {
+public class CatsLoverLoginController {
 
     @Autowired
     CatsLoverLoginService catsLoverLoginService;
@@ -51,7 +51,7 @@ public class CatsLoverController {
 
             HttpSession session=request.getSession();
             session.setAttribute("USER", user);
-            model.addAttribute("loginuser", user.getUserUsername());
+            model.addAttribute("userName", user.getUserUsername());
             return "homeAfterLogin";
         }
         else{
@@ -63,12 +63,8 @@ public class CatsLoverController {
     @RequestMapping("/logout")
     public String logout(HttpServletRequest request,HttpServletResponse response){
         //删除cookie
-        Cookie userCookie = new Cookie("login_id","");
-        userCookie.setMaxAge(0);
-        userCookie.setPath("/");
-        response.addCookie(userCookie);
-        request.getSession().removeAttribute("login_id");
-        request.getSession().removeAttribute("login_password");
+        CookieUtils.removeCookie(request, response, "USERID");
+        CookieUtils.removeCookie(request, response, "USERPWD");
         return "homepage";
     }
 
@@ -88,7 +84,7 @@ public class CatsLoverController {
                 return "registerpage";
             }
         }
-        model.addAttribute("loginuser", register_username);
+        model.addAttribute("userName", register_username);
         return "homepage";
     }
 
@@ -117,7 +113,7 @@ public class CatsLoverController {
                     user = catsLoverLoginService.getUserById(cookieUserId);
                     String realPassword = user.getUserPassword();
                     if (session.getAttribute("login_password").equals(realPassword)){
-                        model.addAttribute("loginuser", user.getUserUsername());
+                        model.addAttribute("userName", user.getUserUsername());
                         return "homepage";
                     }else{
                         return "homepage";
@@ -128,10 +124,8 @@ public class CatsLoverController {
                 }
             }
         }
-
         return "homepage";
     }
-
 }
 
 
