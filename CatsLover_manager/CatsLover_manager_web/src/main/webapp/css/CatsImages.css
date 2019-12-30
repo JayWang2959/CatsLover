@@ -1,0 +1,118 @@
+html,body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+.gallery-wrapper{
+    display: block;
+    list-style: none;
+    width: 800px;
+    height: 400px;
+    margin: 60px auto 0 auto;
+    padding: 10px;
+    background-color: #fff;
+}
+.gallery-wrapper li{
+    display: block;
+    float: left;
+    list-style: none;
+    width: 180px;
+    height: 180px;
+    padding: 10px;
+}
+.gallery-wrapper a{
+    display: block;
+    width: 180px;
+    height: 180px;
+    overflow: hidden;
+}
+.gallery-wrapper img{
+    display: block;
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    background-color: #eee;
+    transition: .5s;
+}
+.gallery-wrapper a:hover img{
+    transform: scale(1.1);
+}
+
+.hidden-images-wrapper > div{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.8);
+    opacity: 0;
+    transition: .6s;
+    pointer-events: none;
+}
+.hidden-images-wrapper > div:target{
+    opacity: 1;
+    pointer-events: auto;
+}
+.hidden-images-wrapper img{
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 740px;
+    height: 500px;
+    max-width: 90%;
+    max-height: 90%;
+    margin: auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 5px;
+    object-fit: contain;
+    transition: .7s;
+    transform: translateY(-30px);
+}
+.hidden-images-wrapper div:target img{
+    transform: translateY(0);
+}
+.img-prev,
+.img-next{
+    display: block;
+    position: absolute;
+    z-index: 4;
+    top: 0;
+    bottom: 0;
+    height: 50px;
+    margin: auto 0;
+    padding: 0 20px;
+    color: #333;
+    font-size: 16px;
+    line-height: 50px;
+    text-decoration: none;
+    background-color: #fff;
+}
+.img-prev:hover,
+.img-next:hover{
+    background-color: #eee;
+}
+.img-prev{
+    left: 0;
+    border-radius: 0 5px 5px 0;
+}
+.img-next{
+    right: 0;
+    border-radius: 5px 0 0 5px;
+}
+.img-close{
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    cursor: default;
+}
