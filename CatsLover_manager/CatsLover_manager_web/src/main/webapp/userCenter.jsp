@@ -69,7 +69,7 @@
                                 <i class="fas fa-cat"></i>猫猫
 							</span>
                         <ul>
-                            <li><a target="frame" href="mycats.jsp">我的猫猫</a></li>
+                            <li><a target="frame" href="userCenterCats.jsp">我的猫猫</a></li>
                         </ul>
                     </li>
 
@@ -88,7 +88,7 @@
 
         <!-- right start -->
         <div style="width:76%;height:100%;">
-            <iframe name="frame" scrolling="auto" width="100%" height="100%" frameborder="0" src="mycats.jsp"></iframe>
+            <iframe name="frame" scrolling="auto" width="100%" height="100%" frameborder="0" src="userCenterCats.jsp"></iframe>
         </div>
         <!-- right end -->
     </div>
