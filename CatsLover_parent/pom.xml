@@ -11,7 +11,6 @@
 
     <!--子模块-->
     <modules>
-        <module>../CatsLover_common</module>
         <module>../CatsLover_manager</module>
     </modules>
 
@@ -26,6 +25,7 @@
         <druid.version>1.1.20</druid.version>
         <mysql.version>8.0.18</mysql.version>
         <jackson-databind>2.4.2</jackson-databind>
+        <servlet.version>4.0.1</servlet.version>
     </properties>
 
     <dependencyManagement>
@@ -94,6 +94,13 @@
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-databind</artifactId>
                 <version>${jackson-databind}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>${servlet.version}</version>
+                <scope>provided</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>

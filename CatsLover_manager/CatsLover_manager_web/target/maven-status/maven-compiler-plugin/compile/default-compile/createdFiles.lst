@@ -1,1 +1,2 @@
 com\CatsLover\controller\CatsLoverController.class
+com\CatsLover\filter\AutoLoginFilter.class

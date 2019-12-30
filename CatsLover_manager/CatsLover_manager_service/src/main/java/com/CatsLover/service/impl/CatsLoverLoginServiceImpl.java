@@ -12,6 +12,7 @@ import java.util.List;
 
 @Service
 public class CatsLoverLoginServiceImpl implements CatsLoverLoginService {
+
     @Autowired
     CatsloverUserMapper catsloverUserMapper;
 
@@ -27,6 +28,18 @@ public class CatsLoverLoginServiceImpl implements CatsLoverLoginService {
             return userList.get(0);
         }
         return null;
+    }
+
+    @Override
+    public CatsloverUser loginByAccount(String userId, String userPwd) {
+        System.out.println("before get user");
+        CatsloverUser user = getUserById(userId);
+        System.out.println(user.getUserUsername());
+        if (user.getUserPassword().equals(userPwd)) {
+            return user;
+        }
+        else
+            return null;
     }
 
     @Override
