@@ -120,7 +120,7 @@
                             <div class="agileits-banner-info">
                                 <h3>给最好的你<span>推荐志同道合的爱猫人</span></h3>
                                 <div class="w3-button">
-                                    <a href="../../../Downloads/moban1900/single.html">More</a>
+                                    <a href="votepage.jsp">More</a>
                                 </div>
                             </div>
                         </li>

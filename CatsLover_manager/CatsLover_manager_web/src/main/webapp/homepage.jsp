@@ -114,7 +114,7 @@
                             <div class="agileits-banner-info">
                                 <h3>给最好的你<span>推荐志同道合的爱猫人</span></h3>
                                 <div class="w3-button">
-                                    <a href="votepage.jsp">More</a>
+                                    <a href="votepage2.jsp">More</a>
                                 </div>
                             </div>
                         </li>

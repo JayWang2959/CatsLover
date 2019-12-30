@@ -44,7 +44,7 @@
         </dependency>
     </dependencies>
 
-    <!-- 如果不添加此节点 mybatis的mapper.xml文件都会被漏掉。 -->
+    <!-- 如果不添加此节点 mybatis的mapper.xml文件都A会被漏掉。 -->
     <build>
         <resources>
             <resource>

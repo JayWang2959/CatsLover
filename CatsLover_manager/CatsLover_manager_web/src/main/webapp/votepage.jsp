@@ -17,12 +17,12 @@
 </head>
 <body background="images/1.jpg">
 <style>
-    .red {
+    .white {
         font-size: 60px;
         color:#FF0000;
         font-style:inherit;
     }
-    .blue {
+    .white {
         font-size: 60px;
         color:#0000FF;
         font-style:inherit;
@@ -39,20 +39,19 @@
 <p></p>
 <form action="applyupload.jsp" method="post" enctype="multipart/form-data">
     <div align="center">
-        <h1 class="white">请填写详细信息</h1>
+        <h1 class="bubble-legend-symbol">请填写详细信息</h1>
         <a  href = "homepage.jsp" >点击返回主界面</a >
     </div>
-    <table width="52%" border="3" align="center">
-        <tr bgcolor="#FFFFCC">
+    <table width="52%" border="3" align="center">yyy
             <td align='center' width="43%" ><div align="center">猫咪昵称:</div></td>
-            <td width="57"><div align="left">
+            <td width="50"><div align="left">
                 <input type="text" name="cat_name">
 <%--            name    --%>
             </div></td>
         </tr>
         <tr bgcolor="#FFFFCC">
             <td align='center' width="43%" ><div align="center">主人id:</div></td>
-            <td width="57"><div align="left">
+            <td width="50"><div align="left">
                 <input type="text" name="user_id">
 <%--           sex     --%>
             </div></td>
