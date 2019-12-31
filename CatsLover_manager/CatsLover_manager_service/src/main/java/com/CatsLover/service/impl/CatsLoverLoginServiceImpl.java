@@ -1,8 +1,11 @@
 package com.CatsLover.service.impl;
 
 import com.CatsLover.mapper.CatsloverUserMapper;
+import com.CatsLover.mapper.CatsloverCatMapper;
 import com.CatsLover.pojo.CatsloverUser;
 import com.CatsLover.pojo.CatsloverUserExample;
+import com.CatsLover.pojo.CatsloverCat;
+import com.CatsLover.pojo.CatsloverCatExample;
 import com.CatsLover.service.CatsLoverLoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

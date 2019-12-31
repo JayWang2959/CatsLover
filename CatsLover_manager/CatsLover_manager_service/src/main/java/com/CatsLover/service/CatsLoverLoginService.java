@@ -2,6 +2,7 @@ package com.CatsLover.service;
 
 import com.CatsLover.pojo.CatsloverUser;
 
+
 public interface CatsLoverLoginService {
 
     CatsloverUser getUserById(String id);

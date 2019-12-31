@@ -1,5 +1,10 @@
-com\CatsLover\pojo\CatsloverUserExample$Criteria.class
 com\CatsLover\pojo\CatsloverUserExample.class
-com\CatsLover\pojo\CatsloverUserExample$Criterion.class
+com\CatsLover\pojo\CatsloverCatExample$Criteria.class
+com\CatsLover\pojo\CatsloverCatExample.class
 com\CatsLover\pojo\CatsloverUserExample$GeneratedCriteria.class
+com\CatsLover\pojo\CatsloverUserExample$Criteria.class
+com\CatsLover\pojo\CatsloverCatExample$GeneratedCriteria.class
+com\CatsLover\pojo\CatsloverUserExample$Criterion.class
+com\CatsLover\pojo\CatsloverCat.class
+com\CatsLover\pojo\CatsloverCatExample$Criterion.class
 com\CatsLover\pojo\CatsloverUser.class
