@@ -1,4 +1,6 @@
 com\CatsLover\service\impl\CatsLoverLoginServiceImpl.class
+com\CatsLover\service\CatsLoverUserCenterService.class
 com\CatsLover\service\impl\CatsLoverVoteApplyImpl.class
 com\CatsLover\service\CatsLoverLoginService.class
+com\CatsLover\service\impl\CatsLoverUserCenterServiceImpl.class
 com\CatsLover\service\CatsLoverVoteApply.class
