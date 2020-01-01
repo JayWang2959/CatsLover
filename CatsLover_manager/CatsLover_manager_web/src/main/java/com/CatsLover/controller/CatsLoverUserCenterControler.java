@@ -94,4 +94,15 @@ public class CatsLoverUserCenterControler {
         }
         return "userCenterFocus";
     }
+
+    @RequestMapping("deleteUserFocusInfo")
+    public String deleteUserFocusInfo(String userId){
+
+        System.out.println(userId+"<<<");
+        catsLoverUserCenterService.deleteFocus(userId);
+        return "userCenterFocus";
+    }
+
+//    @RequestMapping(value="/alterinfo")
+
 }

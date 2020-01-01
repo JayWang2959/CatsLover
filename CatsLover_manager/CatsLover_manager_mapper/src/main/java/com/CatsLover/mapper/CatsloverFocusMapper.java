@@ -19,6 +19,8 @@ public interface CatsloverFocusMapper {
 
     List selectAllFocusIdByUserId(String userId);
 
+    void deleteByUserId(String userId);
+
     int updateByExampleSelective(@Param("record") CatsloverFocus record, @Param("example") CatsloverFocusExample example);
 
     int updateByExample(@Param("record") CatsloverFocus record, @Param("example") CatsloverFocusExample example);

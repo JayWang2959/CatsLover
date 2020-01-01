@@ -2,8 +2,6 @@ package com.CatsLover.service.impl;
 
 import com.CatsLover.mapper.CatsloverFocusMapper;
 import com.CatsLover.mapper.CatsloverUserMapper;
-import com.CatsLover.pojo.CatsloverFocus;
-import com.CatsLover.pojo.CatsloverFocusExample;
 import com.CatsLover.pojo.CatsloverUser;
 import com.CatsLover.pojo.CatsloverUserExample;
 import com.CatsLover.service.CatsLoverUserCenterService;
@@ -44,6 +42,11 @@ public class CatsLoverUserCenterServiceImpl implements CatsLoverUserCenterServic
             return focus;
         }
         return null;
+    }
+
+    @Override
+    public void deleteFocus(String userId){
+        catsloverFocusMapper.deleteByUserId(userId);
     }
 
 }
