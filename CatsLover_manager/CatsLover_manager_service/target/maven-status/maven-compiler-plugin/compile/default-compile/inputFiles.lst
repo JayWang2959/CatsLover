@@ -1,6 +1,15 @@
+<<<<<<< HEAD
 F:\phantom\java\CatsLover\CatsLover_manager\CatsLover_manager_service\src\main\java\com\CatsLover\service\CatsLoverLoginService.java
 F:\phantom\java\CatsLover\CatsLover_manager\CatsLover_manager_service\src\main\java\com\CatsLover\service\impl\CatsLoverVoteApplyImpl.java
 F:\phantom\java\CatsLover\CatsLover_manager\CatsLover_manager_service\src\main\java\com\CatsLover\service\impl\CatsLoverUserCenterServiceImpl.java
 F:\phantom\java\CatsLover\CatsLover_manager\CatsLover_manager_service\src\main\java\com\CatsLover\service\CatsLoverUserCenterService.java
 F:\phantom\java\CatsLover\CatsLover_manager\CatsLover_manager_service\src\main\java\com\CatsLover\service\CatsLoverVoteApply.java
 F:\phantom\java\CatsLover\CatsLover_manager\CatsLover_manager_service\src\main\java\com\CatsLover\service\impl\CatsLoverLoginServiceImpl.java
+=======
+C:\Users\wangj\IdeaProjects\CatsLover\CatsLover_manager\CatsLover_manager_service\src\main\java\com\CatsLover\service\CatsLoverUserCenterService.java
+C:\Users\wangj\IdeaProjects\CatsLover\CatsLover_manager\CatsLover_manager_service\src\main\java\com\CatsLover\service\CatsLoverLoginService.java
+C:\Users\wangj\IdeaProjects\CatsLover\CatsLover_manager\CatsLover_manager_service\src\main\java\com\CatsLover\service\impl\CatsLoverVoteApplyImpl.java
+C:\Users\wangj\IdeaProjects\CatsLover\CatsLover_manager\CatsLover_manager_service\src\main\java\com\CatsLover\service\impl\CatsLoverLoginServiceImpl.java
+C:\Users\wangj\IdeaProjects\CatsLover\CatsLover_manager\CatsLover_manager_service\src\main\java\com\CatsLover\service\impl\CatsLoverUserCenterServiceImpl.java
+C:\Users\wangj\IdeaProjects\CatsLover\CatsLover_manager\CatsLover_manager_service\src\main\java\com\CatsLover\service\CatsLoverVoteApply.java
+>>>>>>> origin/master

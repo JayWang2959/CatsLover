@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.time.MonthDay;
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class CatsLoverUserCenterControler {
@@ -69,4 +70,39 @@ public class CatsLoverUserCenterControler {
 
         return "userCenterInfo";
     }
+
+    @RequestMapping("initUserFocusInfo")
+    public String initUserFocusInfo(HttpServletRequest request, HttpServletResponse response, Model model){
+        HttpSession session = request.getSession(false);
+        if(null!=session){
+            String userId = (String) session.getAttribute("USERID");
+            System.out.println("userId"+userId);
+            List focus = catsLoverUserCenterService.getFocusByUser(userId);
+            model.addAttribute("focus", focus);
+            System.out.println(focus);
+            List<CatsloverUser> focus_info = new ArrayList<CatsloverUser>();
+            CatsloverUser focus_info_temp = new CatsloverUser();
+            for (int i = 0; i < focus.size(); i++){
+                    focus_info_temp = catsLoverLoginService.getUserById((String) focus.get(i));
+                    focus_info.add(focus_info_temp);
+                    System.out.println("test>>"+focus_info_temp.getUserUsername());
+
+
+            }
+            model.addAttribute("focus_info", focus_info);
+//            System.out.println(">>"+focus.getFocusId()+"<<");
+        }
+        return "userCenterFocus";
+    }
+
+    @RequestMapping("deleteUserFocusInfo")
+    public String deleteUserFocusInfo(String userId){
+
+        System.out.println(userId+"<<<");
+        catsLoverUserCenterService.deleteFocus(userId);
+        return "userCenterFocus";
+    }
+
+//    @RequestMapping(value="/alterinfo")
+
 }

@@ -5,12 +5,12 @@
   Time: 14:38
   To change this template use File | Settings | File Templates.
 --%>
-<%@page contentType="text/html" pageEncoding="gb2312"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-    <title>²Î¼Ó±ÈÈü</title>
+    <title>å‚åŠ æ¯”èµ›</title>
     <style type="text/css">
         h1,h2,h3,h4,h5,h6{ display:inline;}
     </style>
@@ -34,45 +34,45 @@
     }
 </style>
 <center>
-    <h1 class="blue">±ÈÈü</h1><h1 >±¨Ãû</h1><h1 class="red">¹ÜÀí</h1>
+    <h1 class="blue">æ¯”èµ›</h1><h1 >æŠ¥å</h1><h1 class="red">ç®¡ç†</h1>
 </center>
 <p></p>
 <form action="applyupload.jsp" method="post" enctype="multipart/form-data">
     <div align="center">
-        <h1 class="bubble-legend-symbol">ÇëÌîÐ´ÏêÏ¸ÐÅÏ¢</h1>
-        <a  href = "homepage.jsp" >µã»÷·µ»ØÖ÷½çÃæ</a >
+        <h1 class="bubble-legend-symbol">è¯·å¡«å†™è¯¦ç»†ä¿¡æ¯</h1>
+        <a  href = "homepage.jsp" >ç‚¹å‡»è¿”å›žä¸»ç•Œé¢</a >
     </div>
     <table width="52%" border="3" align="center">yyy
-            <td align='center' width="43%" ><div align="center">Ã¨ßäêÇ³Æ:</div></td>
-            <td width="50"><div align="left">
-                <input type="text" name="cat_name">
-<%--            name    --%>
-            </div></td>
+        <td align='center' width="43%" ><div align="center">çŒ«å’ªæ˜µç§°:</div></td>
+        <td width="50"><div align="left">
+            <input type="text" name="cat_name">
+            <%--            name    --%>
+        </div></td>
         </tr>
         <tr bgcolor="#FFFFCC">
-            <td align='center' width="43%" ><div align="center">Ö÷ÈËid:</div></td>
+            <td align='center' width="43%" ><div align="center">ä¸»äººid:</div></td>
             <td width="50"><div align="left">
                 <input type="text" name="user_id">
-<%--           sex     --%>
+                <%--           sex     --%>
             </div></td>
         </tr>
         <tr bgcolor="#FFFFCC">
-            <td align='center' width="43%" ><div align="center">²ÎÈüÐûÑÔ:</div></td>
+            <td align='center' width="43%" ><div align="center">å‚èµ›å®£è¨€:</div></td>
             <td width="200"><div align="left">
                 <input type="text" name="apply">
             </div></td>
         </tr>
-        <tr bgcolor="#FFFFCC">
-            <td align='center' width="43%" ><div align="center">Ñ¡ÔñÄãÒª²ÎÈüµÄÍ¼Æ¬:</div></td>
-            <td width="200"><div align="left">
-                <input type="file" name="photo" value="" />
-            </div></td>
-        </tr>
+<%--        <tr bgcolor="#FFFFCC">--%>
+<%--            <td align='center' width="43%" ><div align="center">é€‰æ‹©ä½ è¦å‚èµ›çš„å›¾ç‰‡:</div></td>--%>
+<%--            <td width="200"><div align="left">--%>
+<%--                <input type="file" name="photo" value="" />--%>
+<%--            </div></td>--%>
+<%--        </tr>--%>
         <p></p>
     </table>
     <p align="center">
-        <input type="submit" value="Ìá½»" name="Submit"/>
-        <input type="Reset" value="ÖØÖÃ" name="Reset"/>
+        <input type="submit" value="æäº¤" name="Submit"/>
+        <input type="Reset" value="é‡ç½®" name="Reset"/>
     <p>
 </form>
 </body>

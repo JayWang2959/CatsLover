@@ -1,12 +1,11 @@
 package com.CatsLover.service.impl;
 
-import com.CatsLover.mapper.CatsloverUserMapper;
 import com.CatsLover.mapper.CatsloverCatMapper;
-import com.CatsLover.pojo.CatsloverUser;
-import com.CatsLover.pojo.CatsloverUserExample;
+import com.CatsLover.mapper.CatsloverUserMapper;
 import com.CatsLover.pojo.CatsloverCat;
 import com.CatsLover.pojo.CatsloverCatExample;
-import com.CatsLover.service.CatsLoverLoginService;
+import com.CatsLover.pojo.CatsloverUser;
+import com.CatsLover.pojo.CatsloverUserExample;
 import com.CatsLover.service.CatsLoverVoteApply;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -64,11 +63,20 @@ public class CatsLoverVoteApplyImpl implements CatsLoverVoteApply {
     }
 
     @Override
+<<<<<<< HEAD
     public void submitRegInfo(String cat_name, String user_id, String apply) {
+=======
+    public void submitRegInfo(String cat_id, String username, String apply  , Integer vote) {//, String image
+>>>>>>> origin/master
         CatsloverCat catsloverCat = new CatsloverCat();
         catsloverCat.setCatName(cat_name);
         catsloverCat.setUserId(user_id);
         catsloverCat.setApply(apply);
+<<<<<<< HEAD
+=======
+//        catsloverCat.setImage(image);
+        catsloverCat.setVote(vote);
+>>>>>>> origin/master
 
 //        catsloverCat.setImage(image);
 //        catsloverCat.setVote(vote);

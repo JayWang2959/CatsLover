@@ -90,6 +90,12 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
+<<<<<<< HEAD
+=======
+  <delete id="deleteByUserId" parameterType="java.lang.String">
+    delete from catslover_focus WHERE focus_id = #{userId}
+  </delete>
+>>>>>>> origin/master
   <insert id="insert" parameterType="com.CatsLover.pojo.CatsloverFocus">
     insert into catslover_focus (user_id, focus_id)
     values (#{userId,jdbcType=VARCHAR}, #{focusId,jdbcType=VARCHAR})

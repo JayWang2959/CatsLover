@@ -1,5 +1,6 @@
 package com.CatsLover.service.impl;
 
+import com.CatsLover.mapper.CatsloverFocusMapper;
 import com.CatsLover.mapper.CatsloverUserMapper;
 import com.CatsLover.pojo.CatsloverUser;
 import com.CatsLover.pojo.CatsloverUserExample;
@@ -7,11 +8,15 @@ import com.CatsLover.service.CatsLoverUserCenterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class CatsLoverUserCenterServiceImpl implements CatsLoverUserCenterService {
 
     @Autowired
     CatsloverUserMapper catsloverUserMapper;
+    @Autowired
+    CatsloverFocusMapper  catsloverFocusMapper;
 
     @Override
     public void updateSignature(String userId, String signature) {
@@ -24,4 +29,24 @@ public class CatsLoverUserCenterServiceImpl implements CatsLoverUserCenterServic
 
         catsloverUserMapper.updateByExampleSelective(user, userExample);
     }
+
+    @Override
+    public List getFocusByUser(String userId){
+//        CatsloverFocusExample catsloverFocusExample = new CatsloverFocusExample();
+//        CatsloverFocusExample.Criteria criteria = catsloverFocusExample.createCriteria();
+//        criteria.andUserIdEqualTo(userId);
+
+        List focus = catsloverFocusMapper.selectAllFocusIdByUserId(userId);
+
+        if (focus!=null){
+            return focus;
+        }
+        return null;
+    }
+
+    @Override
+    public void deleteFocus(String userId){
+        catsloverFocusMapper.deleteByUserId(userId);
+    }
+
 }

@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/CatsLover.iml" filepath="$PROJECT_DIR$/.idea/CatsLover.iml" />
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/CatsLover_manager/CatsLover_manager.iml" filepath="$PROJECT_DIR$/CatsLover_manager/CatsLover_manager.iml" />
       <module fileurl="file://$PROJECT_DIR$/CatsLover_manager/CatsLover_manager_common/CatsLover_manager_common.iml" filepath="$PROJECT_DIR$/CatsLover_manager/CatsLover_manager_common/CatsLover_manager_common.iml" />
       <module fileurl="file://$PROJECT_DIR$/CatsLover_manager/CatsLover_manager_mapper/CatsLover_manager_mapper.iml" filepath="$PROJECT_DIR$/CatsLover_manager/CatsLover_manager_mapper/CatsLover_manager_mapper.iml" />
@@ -10,6 +11,8 @@
       <module fileurl="file://$PROJECT_DIR$/CatsLover_manager/CatsLover_manager_service/CatsLover_manager_service.iml" filepath="$PROJECT_DIR$/CatsLover_manager/CatsLover_manager_service/CatsLover_manager_service.iml" />
       <module fileurl="file://$PROJECT_DIR$/CatsLover_manager/CatsLover_manager_web/CatsLover_manager_web.iml" filepath="$PROJECT_DIR$/CatsLover_manager/CatsLover_manager_web/CatsLover_manager_web.iml" />
       <module fileurl="file://$PROJECT_DIR$/CatsLover_parent/CatsLover_parent.iml" filepath="$PROJECT_DIR$/CatsLover_parent/CatsLover_parent.iml" />
+=======
+>>>>>>> origin/master
     </modules>
   </component>
 </project>
