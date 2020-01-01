@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CatLovervote</title>
+
+<link href="css/votestyle.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="js/votejquery.js"></script>
+<script type="text/javascript" src="js/votescript.js"  ></script>
+<script type="text/javascript">
+$(document).ready(function () {
+	$(".artist_l li .cvote").click(function () {
+		var nowdo = $(this);
+		var baby = nowdo.parent().parent().find(".tag_txt").html();
+		var nowvote = nowdo.parent().find(".cvotenum b").html();
+		nowdo.parent().find(".cvotenum b").html(parseInt(nowvote) + 1);
+
+		alert("亲！您为猫猫【" + baby + "】投了一票！谢谢您的投票！");
+
+	});
+});
+</script>
+
+</head>
+<body background="images/1.jpg">
+<div class="itagBox">
+	<ul class="artist_l">
+
+		<li class="tag1">
+           <div class="votetext1">
+			<div class="tag_txt">
+			  猫咪1
+			</div>
+			<a href="#"> 
+             猫咪1主人：
+            </a>
+            </div>
+            <div class="votedo">
+              <div class="cvotenum"><b>1002</b>票</div>
+              <div class="cvote">投票</div>
+            </div>
+		</li>
+
+		<li class="tag1 ">
+          <div class="votetext2">
+			<div class="tag_txt">
+				猫咪2
+			</div>
+			<a href="#">
+				猫咪2主人：
+            </a>
+           </div> <div class="votedo">
+              <div class="cvotenum"><b>1003</b>票</div>
+              <div class="cvote">投票</div>
+            </div>
+		</li>
+
+		<li class="tag1 ">
+			<div class="votetext">
+				<div class="tag_txt">
+					猫咪3
+				</div>
+				<a href="#">
+					猫咪3主人：
+				</a>
+			</div> <div class="votedo">
+			<div class="cvotenum"><b>1003</b>票</div>
+			<div class="cvote">投票</div>
+		</div>
+		</li>
+
+	</ul>
+</div>
+
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+<p></p>
+
+</div>
+</body>
+</html>
