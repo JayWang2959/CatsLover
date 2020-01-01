@@ -61,7 +61,7 @@
 						</span>
                         <ul>
                             <li><a target="frame" href="/initUserCenterInfo">个人资料</a></li>
-                            <li><a target="frame" href="        ">关注列表</a></li>
+                            <li><a target="frame" href="/initUserFocusInfo">关注列表</a></li>
                         </ul></li>
 
                     <li class="ydc-menu-item">

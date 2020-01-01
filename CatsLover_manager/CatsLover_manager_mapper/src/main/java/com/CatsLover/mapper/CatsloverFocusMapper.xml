@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.CatsLover.mapper.TestuserMapper">
-  <resultMap id="BaseResultMap" type="com.CatsLover.pojo.Testuser">
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="userName" jdbcType="VARCHAR" property="username" />
-    <result column="password" jdbcType="VARCHAR" property="password" />
+<mapper namespace="com.CatsLover.mapper.CatsloverFocusMapper">
+  <resultMap id="BaseResultMap" type="com.CatsLover.pojo.CatsloverFocus">
+    <result column="user_id" jdbcType="VARCHAR" property="userId" />
+    <result column="focus_id" jdbcType="VARCHAR" property="focusId" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -65,15 +64,15 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, userName, password
+    user_id, focus_id
   </sql>
-  <select id="selectByExample" parameterType="com.CatsLover.pojo.TestuserExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.CatsLover.pojo.CatsloverFocusExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from testuser
+    from catslover_focus
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -81,68 +80,53 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select
-    <include refid="Base_Column_List" />
-    from testuser
-    where id = #{id,jdbcType=INTEGER}
+  <select id="selectAllFocusIdByUserId" parameterType="java.lang.String" resultType="java.lang.String">
+    select focus_id from catslover_focus WHERE user_id = #{userId}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from testuser
-    where id = #{id,jdbcType=INTEGER}
-  </delete>
-  <delete id="deleteByExample" parameterType="com.CatsLover.pojo.TestuserExample">
-    delete from testuser
+
+  <delete id="deleteByExample" parameterType="com.CatsLover.pojo.CatsloverFocusExample">
+    delete from catslover_focus
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.CatsLover.pojo.Testuser">
-    insert into testuser (id, userName, password)
-    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR})
+  <insert id="insert" parameterType="com.CatsLover.pojo.CatsloverFocus">
+    insert into catslover_focus (user_id, focus_id)
+    values (#{userId,jdbcType=VARCHAR}, #{focusId,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.CatsLover.pojo.Testuser">
-    insert into testuser
+  <insert id="insertSelective" parameterType="com.CatsLover.pojo.CatsloverFocus">
+    insert into catslover_focus
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        id,
+      <if test="userId != null">
+        user_id,
       </if>
-      <if test="username != null">
-        userName,
-      </if>
-      <if test="password != null">
-        password,
+      <if test="focusId != null">
+        focus_id,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=INTEGER},
+      <if test="userId != null">
+        #{userId,jdbcType=VARCHAR},
       </if>
-      <if test="username != null">
-        #{username,jdbcType=VARCHAR},
-      </if>
-      <if test="password != null">
-        #{password,jdbcType=VARCHAR},
+      <if test="focusId != null">
+        #{focusId,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.CatsLover.pojo.TestuserExample" resultType="java.lang.Long">
-    select count(*) from testuser
+  <select id="countByExample" parameterType="com.CatsLover.pojo.CatsloverFocusExample" resultType="java.lang.Long">
+    select count(*) from catslover_focus
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update testuser
+    update catslover_focus
     <set>
-      <if test="record.id != null">
-        id = #{record.id,jdbcType=INTEGER},
+      <if test="record.userId != null">
+        user_id = #{record.userId,jdbcType=VARCHAR},
       </if>
-      <if test="record.username != null">
-        userName = #{record.username,jdbcType=VARCHAR},
-      </if>
-      <if test="record.password != null">
-        userName = #{record.password,jdbcType=VARCHAR},
+      <if test="record.focusId != null">
+        focus_id = #{record.focusId,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null">
@@ -150,26 +134,11 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update testuser
-    set id = #{record.id,jdbcType=INTEGER},
-      userName = #{record.username,jdbcType=VARCHAR}
-      password = #{record.password,jdbcType=VARCHAR}
+    update catslover_focus
+    set user_id = #{record.userId,jdbcType=VARCHAR},
+      focus_id = #{record.focusId,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
-  </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.CatsLover.pojo.Testuser">
-    update testuser
-    <set>
-      <if test="username != null">
-        userName = #{username,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.CatsLover.pojo.Testuser">
-    update testuser
-    set userName = #{username,jdbcType=VARCHAR}
-    where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

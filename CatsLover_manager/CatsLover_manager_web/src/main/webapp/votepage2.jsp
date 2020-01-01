@@ -69,7 +69,7 @@
         <input type="text" name="cat_name" placeholder="Cat's name">
         <input type="text" name="user_id" placeholder="Your user_id">
         <input type="text" name="apply" placeholder="Your entry statement">
-        <input type="file" name="photo" value="" >
+<%--        <input type="file" name="photo" value="" >--%>
 
         <br>
         <font color="white"> ${error}</font>
