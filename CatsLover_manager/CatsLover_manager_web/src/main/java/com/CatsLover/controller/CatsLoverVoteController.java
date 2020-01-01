@@ -47,6 +47,7 @@ public class CatsLoverVoteController {
 //            int vote1 = 0;
 //            upurl += url;
 //            upurl += filename + "." + ext;
+            System.out.println(cat_name);
             catsLoverVoteApply.submitRegInfo(cat_name, user_id, apply);
 
         } catch (Exception e) {

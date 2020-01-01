@@ -69,8 +69,10 @@ public class CatsLoverVoteApplyImpl implements CatsLoverVoteApply {
         catsloverCat.setCatName(cat_name);
         catsloverCat.setUserId(user_id);
         catsloverCat.setApply(apply);
+
 //        catsloverCat.setImage(image);
 //        catsloverCat.setVote(vote);
+
         catsloverCat.setVote(0);
 
 //插入报名猫表
