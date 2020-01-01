@@ -64,18 +64,40 @@ public class CatsLoverVoteApplyImpl implements CatsLoverVoteApply {
     }
 
     @Override
-    public void submitRegInfo(String cat_id, String username, String apply , String image , Integer vote) {
+    public void submitRegInfo(String cat_name, String user_id, String apply) {
         CatsloverCat catsloverCat = new CatsloverCat();
-        catsloverCat.setCatName(cat_id);
-        catsloverCat.setUserId(username);
+        catsloverCat.setCatName(cat_name);
+        catsloverCat.setUserId(user_id);
         catsloverCat.setApply(apply);
-        catsloverCat.setImage(image);
-        catsloverCat.setVote(vote);
+//        catsloverCat.setImage(image);
+//        catsloverCat.setVote(vote);
+        catsloverCat.setVote(0);
 
-
+//插入报名猫表
         catsloverCatMapper.insert(catsloverCat);
     }
 
+    @Override
+    public void catRegList(String cat_name, String user_id, String apply , int vote) {//输出报名猫表
+        CatsloverCatExample catsloverCatExample = new CatsloverCatExample();
+        CatsloverCatExample.Criteria criteria = catsloverCatExample.createCriteria();
+        criteria.andCatNameIsNotNull();
+
+        List<CatsloverCat> catList = catsloverCatMapper.selectByExample(catsloverCatExample);
+
+
+
+    }
+
+    @Override
+    public void voteApply(String cat_name, int vote) {//票数+1\
+        vote+=1;
+        CatsloverCat catsloverCat = new CatsloverCat();
+        catsloverCat.setCatName(cat_name);
+        catsloverCat.setVote(vote);
+        catsloverCatMapper.updateByPrimaryKey(catsloverCat);
+
+    }
 
 }
 

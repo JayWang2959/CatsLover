@@ -21,44 +21,8 @@
         box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
     }
 </style>
-<%--<style>--%>
-<%--    input:focus{--%>
-<%--        border-color: #66afe9;--%>
-<%--        outline: 0;--%>
-<%--        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);--%>
-<%--        box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)--%>
-<%--    }--%>
-<%--    body {--%>
-<%--        color: #000;--%>
-<%--        background: #fff;--%>
-<%--        font-size: 12px;--%>
-<%--        line-height: 166.6%;--%>
-<%--        text-align: center;--%>
-<%--    }--%>
-<%--    body {--%>
-<%--        display: block;--%>
-<%--        margin: 8px;--%>
-<%--    }--%>
-<%--</style>--%>
-<body>
-<%--    <form action="logincheck.form" class="form-horizontal">--%>
-<%--        <div class="control-group">--%>
-<%--            <label class="control-label">账户</label>--%>
-<%--            <input name="temp" placeholder="Id" type="text" width="200px" height="50px"/>--%>
-<%--        </div>--%>
-<%--        <br>--%>
-<%--        <div class="control-group">--%>
-<%--            <label class="control-label">密码</label>--%>
-<%--            <input name="passw" placeholder="Password" type="text" width="200px" height="50px"/>--%>
-<%--            <font color="red">${error}</font>--%>
-<%--        </div>--%>
-<%--        <br>--%>
-<%--&lt;%&ndash;        <input name="passw" type="text" width="200px" height="50px"/>&ndash;%&gt;--%>
-<%--        <input type="submit" value="登录">--%>
-<%--        <!--<input name="password" type="text" width="200px" height="50px"/>-->--%>
-<%--    </form>--%>
-<%--    <button onclick="window.location='submit.jsp'">注册</button>--%>
 
+<body>
 
 <h1>给最好的你 分享你最爱的猫猫</h1>
 <h1>比赛    报名</h1>
@@ -69,7 +33,7 @@
         <input type="text" name="cat_name" placeholder="Cat's name">
         <input type="text" name="user_id" placeholder="Your user_id">
         <input type="text" name="apply" placeholder="Your entry statement">
-        <input type="file" name="photo" value="" >
+<%--        <input type="file" name="photo" value="" >--%>
 
         <br>
         <font color="white"> ${error}</font>
