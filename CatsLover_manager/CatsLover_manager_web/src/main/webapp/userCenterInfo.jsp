@@ -62,7 +62,7 @@
                             <div class="ydc-reg-form-group clearfix"
                                  style="margin-top: 40px;">
                                 <div class="ydc-reg-form-button" style="margin-left: 255px;">
-                                    <a class="btn fl" href="">修改</a>
+                                    <a class="btn fl" href="userCenterInfoAlter.jsp">修改</a>
                                 </div>
                             </div>
                         </div>

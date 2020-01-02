@@ -1,12 +1,18 @@
 package com.CatsLover.pojo;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class CatsloverUser {
+    @JsonProperty(value="userId")
     private String userId;
 
+    @JsonProperty(value="userPassword")
     private String userPassword;
 
+    @JsonProperty(value="userSignature")
     private String userSignature;
 
+    @JsonProperty(value="userUsername")
     private String userUsername;
 
     public String getUserId() {

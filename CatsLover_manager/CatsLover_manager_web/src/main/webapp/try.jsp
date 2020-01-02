@@ -1,16 +1,20 @@
 <%--
   Created by IntelliJ IDEA.
-  User: Lenovo
-  Date: 2019/12/15
-  Time: 22:34
+  User: wangj
+  Date: 2020/1/1
+  Time: 10:15
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
     <title>Title</title>
 </head>
 <body>
-This is the homepage of CatsLover
+    hahahaa
+    <c:forEach var="i" begin="1" end="5">
+    Item <c:out value="${i}"/><p>
+        </c:forEach>
 </body>
 </html>
