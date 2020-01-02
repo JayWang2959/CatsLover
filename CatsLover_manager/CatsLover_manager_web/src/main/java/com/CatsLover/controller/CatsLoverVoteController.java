@@ -8,7 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-<<<<<<< HEAD
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,11 +18,10 @@ import java.io.UnsupportedEncodingException;
 //import java.io.*;
 //import java.awt.Image;
 //import java.awt.image.*;
-=======
+
 import java.util.Calendar;
 
 //import com.jspsmart.upload.SmartUpload;
->>>>>>> origin/master
 
 @Controller
 public class CatsLoverVoteController {
@@ -53,12 +51,9 @@ public class CatsLoverVoteController {
 //            int vote1 = 0;
 //            upurl += url;
 //            upurl += filename + "." + ext;
-<<<<<<< HEAD
+
             System.out.println(cat_name);
             catsLoverVoteApply.submitRegInfo(cat_name, user_id, apply);
-=======
-            catsLoverVoteApply.submitRegInfo(cat_name, user_id, apply, vote);//image,
->>>>>>> origin/master
 
         } catch (Exception e) {
             if (e instanceof DuplicateKeyException) {

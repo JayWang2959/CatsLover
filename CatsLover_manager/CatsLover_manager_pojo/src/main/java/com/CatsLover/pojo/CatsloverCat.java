@@ -7,7 +7,7 @@ public class CatsloverCat {
 
     private String apply;
 
-//    private String image;
+    private String image;
 
     private Integer vote;
 
@@ -35,13 +35,10 @@ public class CatsloverCat {
         this.apply = apply == null ? null : apply.trim();
     }
 
-//    public String getImage() {
-//        return image;
-//    }
-//
-//    public void setImage(String image) {
-//        this.image = image == null ? null : image.trim();
-//    }
+
+    public void setImage(String image) {
+        this.image = image == null ? null : image.trim();
+    }
 
     public Integer getVote() {
         return vote;

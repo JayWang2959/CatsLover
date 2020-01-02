@@ -63,28 +63,26 @@ public class CatsLoverVoteApplyImpl implements CatsLoverVoteApply {
     }
 
     @Override
-<<<<<<< HEAD
     public void submitRegInfo(String cat_name, String user_id, String apply) {
-=======
-    public void submitRegInfo(String cat_id, String username, String apply  , Integer vote) {//, String image
->>>>>>> origin/master
         CatsloverCat catsloverCat = new CatsloverCat();
         catsloverCat.setCatName(cat_name);
         catsloverCat.setUserId(user_id);
+        catsloverCat.setImage(null);
         catsloverCat.setApply(apply);
-<<<<<<< HEAD
-=======
-//        catsloverCat.setImage(image);
-        catsloverCat.setVote(vote);
->>>>>>> origin/master
 
+//        catsloverCat.setImage(image);
 //        catsloverCat.setImage(image);
 //        catsloverCat.setVote(vote);
 
         catsloverCat.setVote(0);
 
 //插入报名猫表
-        catsloverCatMapper.insert(catsloverCat);
+//        try {
+            catsloverCatMapper.insert(catsloverCat);
+//        } catch (Exception e){
+//            e.printStackTrace();
+//            System.out.println(e);
+//        }
     }
 
     @Override

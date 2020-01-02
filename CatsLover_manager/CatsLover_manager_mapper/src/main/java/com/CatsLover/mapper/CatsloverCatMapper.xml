@@ -5,7 +5,7 @@
     <id column="cat_name" jdbcType="VARCHAR" property="catName" />
     <result column="user_id" jdbcType="VARCHAR" property="userId" />
     <result column="apply" jdbcType="VARCHAR" property="apply" />
-<!--    <result column="image" jdbcType="VARCHAR" property="image" />-->
+    <result column="image" jdbcType="VARCHAR" property="image" />
     <result column="vote" jdbcType="INTEGER" property="vote" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -67,7 +67,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    cat_name, user_id, apply, vote<!--, image-->
+    cat_name, user_id, apply, image, vote
   </sql>
   <select id="selectByExample" parameterType="com.CatsLover.pojo.CatsloverCatExample" resultMap="BaseResultMap">
     select
@@ -84,7 +84,7 @@
     </if>
   </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select
+    select 
     <include refid="Base_Column_List" />
     from catslover_cat
     where cat_name = #{catName,jdbcType=VARCHAR}
@@ -100,10 +100,10 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.CatsLover.pojo.CatsloverCat">
-    insert into catslover_cat (cat_name, user_id, apply,
+    insert into catslover_cat (cat_name, user_id, apply, 
       image, vote)
-    values (#{catName,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, #{apply,jdbcType=VARCHAR},
-       #{vote,jdbcType=INTEGER})<!--#{image,jdbcType=VARCHAR},-->
+    values (#{catName,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, #{apply,jdbcType=VARCHAR}, 
+      #{image,jdbcType=VARCHAR}, #{vote,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.CatsLover.pojo.CatsloverCat">
     insert into catslover_cat
@@ -117,9 +117,9 @@
       <if test="apply != null">
         apply,
       </if>
-<!--      <if test="image != null">-->
-<!--        image,-->
-<!--      </if>-->
+      <if test="image != null">
+        image,
+      </if>
       <if test="vote != null">
         vote,
       </if>
@@ -134,9 +134,9 @@
       <if test="apply != null">
         #{apply,jdbcType=VARCHAR},
       </if>
-<!--      <if test="image != null">-->
-<!--        #{image,jdbcType=VARCHAR},-->
-<!--      </if>-->
+      <if test="image != null">
+        #{image,jdbcType=VARCHAR},
+      </if>
       <if test="vote != null">
         #{vote,jdbcType=INTEGER},
       </if>
@@ -160,9 +160,9 @@
       <if test="record.apply != null">
         apply = #{record.apply,jdbcType=VARCHAR},
       </if>
-<!--      <if test="record.image != null">-->
-<!--        image = #{record.image,jdbcType=VARCHAR},-->
-<!--      </if>-->
+      <if test="record.image != null">
+        image = #{record.image,jdbcType=VARCHAR},
+      </if>
       <if test="record.vote != null">
         vote = #{record.vote,jdbcType=INTEGER},
       </if>
@@ -191,9 +191,9 @@
       <if test="apply != null">
         apply = #{apply,jdbcType=VARCHAR},
       </if>
-<!--      <if test="image != null">-->
-<!--        image = #{image,jdbcType=VARCHAR},-->
-<!--      </if>-->
+      <if test="image != null">
+        image = #{image,jdbcType=VARCHAR},
+      </if>
       <if test="vote != null">
         vote = #{vote,jdbcType=INTEGER},
       </if>
@@ -204,7 +204,7 @@
     update catslover_cat
     set user_id = #{userId,jdbcType=VARCHAR},
       apply = #{apply,jdbcType=VARCHAR},
---       image = #{image,jdbcType=VARCHAR},
+      image = #{image,jdbcType=VARCHAR},
       vote = #{vote,jdbcType=INTEGER}
     where cat_name = #{catName,jdbcType=VARCHAR}
   </update>
