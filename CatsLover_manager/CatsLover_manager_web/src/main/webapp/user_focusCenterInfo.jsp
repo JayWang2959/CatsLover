@@ -23,41 +23,31 @@
                 <div class="ydc-tabPanel ydc-tabPanel-release">
                     <div class="ydc-release-tab-head">
                         <ul>
-                            <li class="hit">帐号设置</li>
+                            <li class="hit">${USERNAME}</li>
                         </ul>
                     </div>
                     <div class="ydc-panes">
                         <div class="ydc-pane ydc-pane-clear" style="display: block;">
-<%--                            <div class="ydc-reg-form-group clearfix">--%>
-<%--                                <label>帐号ID</label>--%>
-<%--                                <div class="ydc-reg-form-input">--%>
-<%--                                    <label>${USERID}</label>--%>
-<%--                                </div>--%>
-<%--                            </div>--%>
-                            <form action="/alterUserInfo" method="post">
+                            <div class="ydc-reg-form-group clearfix">
+                                <label>帐号ID</label>
+                                <div class="ydc-reg-form-input">
+                                    <label>${USERID}</label>
+                                </div>
+                            </div>
+
                             <div class="ydc-reg-form-group clearfix">
                                 <label>昵称</label>
                                 <div class="ydc-reg-form-input">
-                                    <input name="userUsername" type="text" placeholder="昵称" class="text"  >
+                                    <label>${USERNAME}</label>
                                 </div>
                             </div>
 
                             <div class="ydc-reg-form-group clearfix">
                                 <label>个性签名</label>
                                 <div class="ydc-reg-form-input">
-                                    <input name="userSignature" type="text" placeholder="个性签名" class="text"  >
-
+                                    <label>${USERSIGNATURE}</label>
                                 </div>
                             </div>
-                                <div class="ydc-reg-form-group clearfix"
-                                     style="margin-top: 40px;">
-                                    <div class="ydc-reg-form-button" style="margin-left: 255px;">
-<%--                                        <div class=""><input type="submit" onclick="myFunction()" value="修改" ></div>--%>
-<%--                                                                            <a class="btn fl" href="/alterUserInfo?userUsername,userSignature">修改</a>--%>
-                                        <input type="submit" onclick="myFunction()" value="修改" >
-                                    </div>
-                                </div>
-                            </form>
 
                             <%--                            <div class="ydc-reg-form-group clearfix">--%>
                             <%--                                <label>帐号头像</label>--%>
@@ -68,7 +58,6 @@
                             <%--                                    </div>--%>
                             <%--                                </div>--%>
                             <%--                            </div>--%>
-
 
                         </div>
                     </div>

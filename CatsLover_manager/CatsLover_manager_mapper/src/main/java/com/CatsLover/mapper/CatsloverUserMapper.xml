@@ -83,7 +83,7 @@
     </if>
   </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select 
+    select
     <include refid="Base_Column_List" />
     from catslover_user
     where user_id = #{userId,jdbcType=VARCHAR}
@@ -99,9 +99,9 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.CatsLover.pojo.CatsloverUser">
-    insert into catslover_user (user_id, user_password, user_signature, 
+    insert into catslover_user (user_id, user_password, user_signature,
       user_username)
-    values (#{userId,jdbcType=VARCHAR}, #{userPassword,jdbcType=VARCHAR}, #{userSignature,jdbcType=VARCHAR}, 
+    values (#{userId,jdbcType=VARCHAR}, #{userPassword,jdbcType=VARCHAR}, #{userSignature,jdbcType=VARCHAR},
       #{userUsername,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.CatsLover.pojo.CatsloverUser">
@@ -191,6 +191,17 @@
     set user_password = #{userPassword,jdbcType=VARCHAR},
       user_signature = #{userSignature,jdbcType=VARCHAR},
       user_username = #{userUsername,jdbcType=VARCHAR}
+    where user_id = #{userId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateUserInfo" parameterType="com.CatsLover.pojo.CatsloverUser">
+    update catslover_user
+    set
+    <if test="userUsername != null">
+      user_username = #{userUsername,jdbcType=VARCHAR},
+    </if>
+    <if test="userSignature != null">
+      user_signature = #{userSignature,jdbcType=VARCHAR}
+    </if>
     where user_id = #{userId,jdbcType=VARCHAR}
   </update>
 </mapper>

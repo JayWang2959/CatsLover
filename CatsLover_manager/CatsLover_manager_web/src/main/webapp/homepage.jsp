@@ -273,7 +273,7 @@
                 <div class="w3-agile-news-date">
                     <div class="agile-news-icon">
                         <i class="fa fa-calendar" aria-hidden="true"></i>
-                        <p>Nov 24</p>
+                        <p>Jan 02</p>
                     </div>
                     <div class="agileits-line"> </div>
                     <div class="agile-news-icon">
@@ -283,7 +283,7 @@
                     <div class="agileits-line"> </div>
                     <div class="agile-news-icon">
                         <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></a>
-                        <p>3482</p>
+                        <p>999999</p>
                     </div>
                 </div>
                 <div class="w3-agile-news-img">
@@ -296,18 +296,13 @@
             <div class="col-md-6 news-right">
                 <div class="news-right-grid">
                     <a href="../../../Downloads/moban1900/single.html">Nunc non neque ex. Aliquam neque massa</a>
-                    <h5>06th Nov,2016</h5>
-                    <p>Ut rutrum convallis erat at malesuada. Donec facilisis sem nisl, ut rhoncus ex ullamcorper ornare. Ut ac interdum velit. Cras nulla nibh, rutrum non venenatis sit amet, ullamcorper venenatis felis.</p>
+                    <h5>025st Dec,2019</h5>
+                    <p>CatsLover猫咪爱好者交流网站正式上线</p>
                 </div>
                 <div class="news-right-grid">
                     <a href="../../../Downloads/moban1900/single.html">Phasellus sapien eros, condimentum quis</a>
-                    <h5>17th Nov,2016</h5>
-                    <p>Ut rutrum convallis erat at malesuada. Donec facilisis sem nisl, ut rhoncus ex ullamcorper ornare. Ut ac interdum velit. Cras nulla nibh, rutrum non venenatis sit amet, ullamcorper venenatis felis.</p>
-                </div>
-                <div class="news-right-grid">
-                    <a href="../../../Downloads/moban1900/single.html">Donec justo ante, maximus et aliquam et</a>
-                    <h5>29th Nov,2016</h5>
-                    <p>Ut rutrum convallis erat at malesuada. <wbr>Donec facilisis sem nisl, ut rhoncus ex ullamcorper ornare. Ut ac interdum velit. Cras nulla nibh, rutrum non venenatis sit amet, ullamcorper venenatis felis.</p>
+                    <h5>01st Jan,2020</h5>
+                    <p>CatsLover猫咪爱好者交流网站的人数达到了整整三位！</p>
                 </div>
             </div>
             <div class="clearfix"> </div>
@@ -323,13 +318,6 @@
                 <h3>
                     <a href="index.html">Cats <span>Lover</span></a>
                 </h3>
-                <div class="footer-social-grids">
-                    <ul>
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                    </ul>
-                </div>
             </div>
             <div class="col-md-4 footer-left">
                 <h4>Navigation</h4>

@@ -2,3 +2,4 @@ com\CatsLover\filter\AutoLoginFilter.class
 com\CatsLover\controller\CatsLoverVoteController.class
 com\CatsLover\controller\CatsLoverUserCenterControler.class
 com\CatsLover\controller\CatsLoverLoginController.class
+com\CatsLover\controller\FileUploadController.class

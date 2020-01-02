@@ -21,7 +21,7 @@ public interface CatsloverUserMapper {
 
     CatsloverUser selectByPrimaryKey(String userId);
 
-    void updateUserInfo(String userUsername, String userSignature);
+    void updateUserInfo(@Param("userId") String userId, @Param("userUsername") String userUsername, @Param("userSignature") String userSignature);
 
     int updateByExampleSelective(@Param("record") CatsloverUser record, @Param("example") CatsloverUserExample example);
 

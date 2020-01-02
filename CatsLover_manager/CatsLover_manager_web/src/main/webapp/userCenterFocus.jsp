@@ -39,7 +39,8 @@
 
                 <tr>
                         <td>${CatsloverUser.userId}</td>
-                        <td>${CatsloverUser.userUsername}</td>
+<%--                        <td>${CatsloverUser.userUsername}</td>--%>
+                        <td><a href="/initFocusUserCenterInfo?userId=${CatsloverUser.userId}" >${CatsloverUser.userUsername}</a></td>
 <%--                        <td><input type="button" value="取消关注" οnclick="test();"/></td>--%>
                         <td><a href="/deleteUserFocusInfo?userId=${CatsloverUser.userId}" >取消关注</a></td>
                 </tr>

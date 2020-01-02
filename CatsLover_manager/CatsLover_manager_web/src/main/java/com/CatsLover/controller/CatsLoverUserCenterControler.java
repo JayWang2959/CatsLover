@@ -71,6 +71,17 @@ public class CatsLoverUserCenterControler {
         return "userCenterInfo";
     }
 
+    @RequestMapping("initFocusUserCenterInfo")
+    public String initFocusUserCenterInfo (String userId, Model model) {
+            CatsloverUser user = catsLoverLoginService.getUserById(userId);
+
+            model.addAttribute("USERID", user.getUserId());
+            model.addAttribute("USERNAME", user.getUserUsername());
+            model.addAttribute("USERSIGNATURE", user.getUserSignature());
+
+        return "user_focusCenterInfo";
+    }
+
     @RequestMapping("initUserFocusInfo")
     public String initUserFocusInfo(HttpServletRequest request, HttpServletResponse response, Model model){
         HttpSession session = request.getSession(false);
@@ -103,6 +114,19 @@ public class CatsLoverUserCenterControler {
         return "userCenterFocus";
     }
 
-//    @RequestMapping(value="/alterinfo")
+    @RequestMapping(value="alterUserInfo")
+    public String alterUserInfo(HttpServletRequest request, HttpServletResponse response, Model model){
+        String userUsername = request.getParameter("userUsername");
+        String userSignature = request.getParameter("userSignature");
+        System.out.println(userUsername+"??"+userSignature);
+        HttpSession session = request.getSession(false);
+        if(null!=session) {
+            String userId = (String) session.getAttribute("USERID");
+            catsLoverUserCenterService.updateUserInfo(userId,userUsername,userSignature);
+            return "userCenterInfo";
+        }
+        return null;
+    }
+
 
 }

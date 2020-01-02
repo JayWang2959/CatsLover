@@ -49,4 +49,8 @@ public class CatsLoverUserCenterServiceImpl implements CatsLoverUserCenterServic
         catsloverFocusMapper.deleteByUserId(userId);
     }
 
+    @Override
+    public void updateUserInfo(String userId, String userUsername, String userSignature){
+        catsloverUserMapper.updateUserInfo(userId, userUsername, userSignature);
+    }
 }
