@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-<%--
-=======
 <%@ page import="com.CatsLover.pojo.CatsloverUser" %><%--
->>>>>>> origin/master
   Created by IntelliJ IDEA.
   User: wangj
   Date: 2020/1/1
@@ -11,24 +7,6 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<<<<<<< HEAD
-<html>
-<head>
-<%--    <title>Title</title>--%>
-</head>
-<body>
-<br><br><br>
-关注列表
-<c:forEach items="${focus_info}" var="CatsloverUser">
-        <table>
-        <tr>
-                <td>${CatsloverUser.userId}</td>
-                <td>${CatsloverUser.userUsername}</td>
-        </tr>
-        </table>
-</c:forEach>
-
-=======
 <%--<script language="javascript">--%>
 <%--        function test () {--%>
 <%--                $.ajax({--%>
@@ -68,6 +46,5 @@
         </c:forEach>
 </table>
 </div>
->>>>>>> origin/master
 </body>
 </html>
