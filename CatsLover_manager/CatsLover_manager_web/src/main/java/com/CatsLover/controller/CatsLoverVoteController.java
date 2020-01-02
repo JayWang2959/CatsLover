@@ -8,9 +8,22 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+<<<<<<< HEAD
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.io.UnsupportedEncodingException;
+
+//import com.jspsmart.upload.*;
+//import java.io.*;
+//import java.awt.Image;
+//import java.awt.image.*;
+=======
 import java.util.Calendar;
 
 //import com.jspsmart.upload.SmartUpload;
+>>>>>>> origin/master
 
 @Controller
 public class CatsLoverVoteController {
@@ -18,7 +31,7 @@ public class CatsLoverVoteController {
     CatsLoverVoteApply catsLoverVoteApply;
 
     @RequestMapping(value = "/vote")
-    public String submitCat(@RequestParam(required = false) String cat_name, String user_id, String apply, String image, Integer vote, Model model) {
+    public String submitCat(HttpServletRequest request, String cat_name, String user_id, String apply , Model model) {
         try {
             String url = "upload/";
             String saveurl = "";
@@ -40,7 +53,12 @@ public class CatsLoverVoteController {
 //            int vote1 = 0;
 //            upurl += url;
 //            upurl += filename + "." + ext;
+<<<<<<< HEAD
+            System.out.println(cat_name);
+            catsLoverVoteApply.submitRegInfo(cat_name, user_id, apply);
+=======
             catsLoverVoteApply.submitRegInfo(cat_name, user_id, apply, vote);//image,
+>>>>>>> origin/master
 
         } catch (Exception e) {
             if (e instanceof DuplicateKeyException) {
@@ -53,7 +71,46 @@ public class CatsLoverVoteController {
                 return "votepage2";
             }
         }
-        model.addAttribute("loginuser", user_id);
-        return "homepage";
+        return "vote";
+    }
+
+    @RequestMapping(value = "/vote2")
+    public String voteCatList(HttpServletRequest request, String cat_name, String user_id, String apply ,Integer vote, Model model) {
+        try {
+
+            catsLoverVoteApply.catRegList( cat_name, user_id, apply , vote);
+
+        } catch (Exception e) {
+            if (e instanceof DuplicateKeyException) {
+                e.printStackTrace();
+                model.addAttribute("error", "猫咪昵称已存在！");
+                return "vote";
+            } else {
+                e.printStackTrace();
+                model.addAttribute("error", "抱歉，出现未weqeqwe知错误，请再试一次");
+                return "vote";
+            }
+        }
+        return "votedeal";
+    }
+
+    @RequestMapping(value = "/vote3")
+    public String voteApp(HttpServletRequest request,String cat_name, int vote, Model model) {
+        try {
+
+            catsLoverVoteApply.voteApply(cat_name , vote);
+
+        } catch (Exception e) {
+            if (e instanceof DuplicateKeyException) {
+                e.printStackTrace();
+                model.addAttribute("error", "猫咪昵称已存在！");
+                return "vote";
+            } else {
+                e.printStackTrace();
+                model.addAttribute("error", "抱歉，出现未weqeqwe知错误，请再试一次");
+                return "vote";
+            }
+        }
+        return "votedeal";
     }
 }
